@@ -31,9 +31,6 @@ const requestLoop = setInterval(() => {
             if (html.indexOf(SEARCH) < 0) {
                 sendMessage(MATCH);
             } 
-            else {
-                console.log("test!");
-            }
         }).catch((error) => {
             console.log(error);
             sendMessage(error);
