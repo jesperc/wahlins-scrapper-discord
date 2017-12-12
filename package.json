@@ -1,0 +1,23 @@
+{
+  "name": "wahlins-scrapper-discord",
+  "version": "1.0.0",
+  "description": "Looks for new apartments at Wåhlin Fastigheter every minute. Prints to Discord if found.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesperc/wahlins-scrapper-discord.git"
+  },
+  "author": "Jesper Corell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesperc/wahlins-scrapper-discord/issues"
+  },
+  "homepage": "https://github.com/jesperc/wahlins-scrapper-discord#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "discord.js": "^11.2.1"
+  }
+}
