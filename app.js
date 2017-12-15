@@ -11,10 +11,35 @@ const CHANNEL_ID = '385206524244525057';
 
 const client = new Discord.Client();
 
+let status = "Running";
+
 // bot is ready
-client.on('ready', (evt) => {
+client.on('ready', (event) => {
     console.log('Connected!');
     sendMessage(READY);
+    console.log(client);
+});
+
+client.on('error', (error) => {
+    console.log(error);
+    sendMessage("Client on error");
+});
+
+client.on('disconnect', (event) => {
+    console.log(event);
+    sendMessage("Client on disconnect");
+});
+
+client.on('message', (message) => {
+    console.log(message.content);
+    if (message.content === '!status') {
+        sendMessage(`My status is: ${status}`);
+        axios.get(URL).then((response) => {
+            sendMessage('Get request: Successful');
+        }).catch((error) => {
+            sendMessage('Get request: Failure');
+        });
+    }
 });
 
 // send message to Discord channel
@@ -27,6 +52,7 @@ const sendMessage = (message) => {
 const requestLoop = setInterval(() => {
     if (client.user !== undefined) {
         axios.get(URL).then((response) => {
+            status = "Running";
             let html = response.data;
             if (html.indexOf(SEARCH) < 0) {
                 sendMessage(MATCH);
@@ -35,6 +61,7 @@ const requestLoop = setInterval(() => {
             console.log(error);
             sendMessage("Error occured on axios get request!");
             sendMessage(error);
+            status = "Error";
         });
     }
 }, INTERVAL_IN_MS);
