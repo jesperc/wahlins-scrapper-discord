@@ -33,6 +33,7 @@ const requestLoop = setInterval(() => {
             } 
         }).catch((error) => {
             console.log(error);
+            sendMessage("Error occured on axios get request!");
             sendMessage(error);
         });
     }
