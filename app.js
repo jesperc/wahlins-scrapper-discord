@@ -17,7 +17,6 @@ let status = "Running";
 client.on('ready', (event) => {
     console.log('Connected!');
     sendMessage(READY);
-    console.log(client);
 });
 
 client.on('error', (error) => {
