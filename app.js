@@ -7,7 +7,7 @@ const READY = 'I will now look for newly added apartments on Wåhlins Fastighete
 const SEARCH = 'Just nu har vi tyvärr inga lediga lägenheter att förmedla här';
 const MATCH = 'There are avaliable apartments! Go to: http://wahlinfastigheter.se/lediga-objekt/lagenhet/';
 const INTERVAL_IN_MS = 60000; // once per minute
-const CHANNEL_ID = '385206524244525057';
+const CHANNEL_ID = '385206081594327042';
 
 const client = new Discord.Client();
 
